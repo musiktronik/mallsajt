@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+body {
+    display: flex;  /*Flexbox-layout i kolumner för hela sidan*/
+    flex-flow: column;
+    width: 90%;
+    margin: auto;
+    background: #999999;
+    font-family: 'Droid Sans', Helvetica, serif; /*Font från Google Fonts */
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-family: sans-serif;
+}
+
+section {
+    display: flex; /*Flexbox-layout i rader för elementet section*/
+    flex-flow: row;
+    min-height: 500px;
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    border-radius: 7pt;
+    background: #ccaaff;
+    flex: auto; /* Automatisk storlek för flexlayouten */
+    order: 2;   /* Placera section i mitten av sidan (2 av 3) */
+}
+
+article {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #cccc33;
+    border-radius: 7pt;
+    background: #dddd88;
+    /*flex: auto;*/
+    flex: auto;
+    /*flex: 3 1 auto;*/
+    order: 2;
+}
+ 
+article p {
+    font-size: 24px;
+    font-family: 'Tangerine', Helvetica, serif; /*Font från Google Fonts */
+}
+ 
+nav {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    border-radius: 7pt;
+    background: #ccccff;
+    /*flex: auto;*/
+    /*flex: 1 6 20%;*/
+    flex: 20%;
+    order: 1;
+}
+
+aside {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    border-radius: 7pt;
+    background: #ccccff;
+    /*flex: auto;*/
+    flex: 20%;
+    /*flex: 1 6 20%;*/
+    order: 3;
+}
+
+header, footer {
+    margin: 4px;
+    padding: 5px;
+    min-height: 100px;
+    border: 1px solid #eebb55;
+    border-radius: 7pt;
+    background: #ffeebb;
+}
+
+header {
+    flex: auto;
+    order: 1;
+}
+
+footer {
+    flex: auto;
+    order: 3;
+}
+
+section section{
+    display: flex; /*Flexbox-layout i kolumner för inre sektioner*/
+    flex-flow: column;
+    min-height: 500px;
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    border-radius: 7pt;
+    background: #bbaaff;
+    flex:30%;
+}
+
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+    
+    section, #page {
+        flex-flow: column;
+        flex-direction: column;
+    }
+    
+    section > article, section > nav, section > aside {
+      /* Return them to document order */
+        /*order: 0;*/
+    }
+    
+    section > nav, section > aside, header, footer {
+        min-height: 60px;
+        max-height: 60px;
+    }
+}
+
