@@ -1,18 +1,36 @@
 @charset "utf-8";
 
+/*Definiera ditt eget typsnitt */
+@font-face {
+  font-family: RogersHandwriting; /*Hitta på ett namn */
+  src: local("Rogers Handwriting"),
+       url(RogersHandwritingRegular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: MyFontFamily;
+  src: local("My Font Name"),
+       local("My Alternative Font Name"),
+       url(MyFontNameFilename.ttf); /* Denna fil ska läggas i samma mapp som din CSS-fil */
+  font-weight: normal;
+}
+
 body {
     display: flex;  /*Flexbox-layout i kolumner för hela sidan*/
     flex-flow: column;
     width: 80%;
     margin: auto;
-    background: #fff; */
+    background: #fff; 
 /*    background: #ccff66; /* lime */ 
 /*    background: #a919a6; /* cerise */
-    font-family: 'Droid Sans', Helvetica, serif; /*Font från Google Fonts */
+/*    font-family: 'Droid Sans', Helvetica, serif; /*Font från Google Fonts */
+    font-family: fantasy;
 }
 h1, h2, h3, h4, h5, h6 {
     font-size: 100%;
-    font-family: sans-serif;
+/*    font-family: sans-serif; */
+    font-family: fantasy, cursive;
 }
 
 header {
@@ -42,7 +60,7 @@ nav {
 nav ul {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start; */
+    justify-content: flex-start;
 /*    justify-content: space-between; */
     margin: 0;
     padding: 0;
@@ -59,7 +77,7 @@ nav ul li {
 article ul {
     display: flex;
     flex-flow: column;
-    justify-content: flex-start; */
+    justify-content: flex-start;
 /*    justify-content: space-between; */
     margin: 0;
     padding: 0;
@@ -142,7 +160,7 @@ article{
     background: #ccff66; /* lime */ 
 /*    color: #faee48; /*gul */
 /*    flex:auto; */
-    font-family: 'Droid Sans', Helvetica, serif; /*Font från Google Fonts */
+    font-family: RogersHandwriting, 'Droid Sans', Helvetica, serif; /*Font från Google Fonts */
     font-size: 20px;
 }
 
@@ -171,8 +189,8 @@ section footer {
 
 article p {
     font-size: 20px;
-/*    font-family: 'Tangerine', Helvetica, serif; /*Font från Google Fonts */ */
-    font-family: 'Droid Sans', Helvetica, serif; /*Font från Google Fonts */
+/*    font-family: 'Tangerine', Helvetica, serif; /*Font från Google Fonts */
+    font-family: RogersHandwriting, 'Droid Sans', Helvetica, serif; /*Font från Google Fonts */
 /*    border: 1px solid #cccc33;
     border-radius: 7pt;
 /*    background: #dddd88; */
